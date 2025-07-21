@@ -12,23 +12,23 @@ import java.util.Optional;
 @Service
 
 public class LoginService {
-   public  final UserRepository UserRepository;
+   public  final UserRepository userRepository;
 
     public LoginService(com.example.user_management.Repository.UserRepository userRepository) {
-        UserRepository = userRepository;
+        this.userRepository = userRepository;
     }
 
-    public ResponseEntity<LoginResponse>validateCredentials(String user , String pass){
-        Optional<UserApp>userOptional = UserRepository.findByUsername(user);{
+    public ResponseEntity<LoginResponse>validateCredentials(String username , String pass){
+        Optional<UserApp>userOptional = userRepository.findByUsername(username);{
             if(userOptional.isPresent()) {
                 UserApp savedUserApp = userOptional.get();
-                if(savedUserApp.getPassword(). equals(pass)) {
+                if(savedUserApp.getPassword().equals(pass)) {
                     return new ResponseEntity<>(new LoginResponse("Login Successful"), HttpStatus.OK);
                  }else {
-                    return new ResponseEntity<>(new LoginResponse("Wrong Credentials"), HttpStatus.OK);
+                    return new ResponseEntity<>(new LoginResponse("Wrong Credentials"), HttpStatus.BAD_REQUEST);
                 }
             }else {
-                return new ResponseEntity<>(new LoginResponse("Wrong Credentials"), HttpStatus.OK);
+                return new ResponseEntity<>(new LoginResponse("Wrong Credentials"), HttpStatus.BAD_REQUEST);
 
             }
         }

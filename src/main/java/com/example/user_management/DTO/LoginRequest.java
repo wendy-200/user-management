@@ -2,15 +2,15 @@ package com.example.user_management.DTO;
 
 public class LoginRequest {
     private  String user;
-    private  String pass;
+    private  String password;
 
     private LoginRequest(){
 
     }
 
-    public LoginRequest(String user, String pass) {
+    public LoginRequest(String user, String password) {
         this.user = user;
-        this.pass = pass;
+        this.password = password;
     }
 
     public String getUser() {
@@ -21,11 +21,11 @@ public class LoginRequest {
         this.user = user;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

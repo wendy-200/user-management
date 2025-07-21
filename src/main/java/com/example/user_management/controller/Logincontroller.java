@@ -7,8 +7,6 @@ import com.example.user_management.service.LoginService;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
-
 @RestController
 
 
@@ -20,7 +18,7 @@ public  class Logincontroller {
     }
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> processLogin(@RequestBody LoginRequest loginRequest){
-        return loginService.validateCredentials(loginRequest.getUser(),loginRequest.getPass());
+        return loginService.validateCredentials(loginRequest.getUser(),loginRequest.getPassword());
     }
   }
 
