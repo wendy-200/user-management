@@ -15,20 +15,23 @@ public class bootstrapData implements CommandLineRunner {
 
     public  void  createUsers(){
         UserApp userApp1 = new UserApp();
-        userApp1.setUserid("1");
+        userApp1.setUserId("1");
         userApp1.setName("Wendy");
         userApp1.setLastname("Ortiz");
         userApp1.setEmail("mabellortiz300@gmail.com");
         userApp1.setUsername("wendy.mabell");
         userApp1.setPassword("123456");
 
+        userRepository.save(userApp1);
+
         UserApp userApp2 = new UserApp();
-        userApp2.setUserid("2");
+        userApp2.setUserId("2");
         userApp2.setName("Administrador");
         userApp2.setLastname("1");
         userApp2.setEmail("admi@ups.edu.ec");
         userApp2.setUsername("admi");
         userApp2.setPassword("123456");
+        userRepository.save(userApp2);
 
     }
     @Override

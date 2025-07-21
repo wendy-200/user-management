@@ -18,7 +18,7 @@ public  class Logincontroller {
     public Logincontroller(LoginService loginService) {
         this.loginService = loginService;
     }
-    @PostMapping("/Login")
+    @PostMapping("/login")
     public ResponseEntity<LoginResponse> processLogin(@RequestBody LoginRequest loginRequest){
         return loginService.validateCredentials(loginRequest.getUser(),loginRequest.getPass());
     }

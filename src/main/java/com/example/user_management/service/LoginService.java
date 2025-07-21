@@ -19,7 +19,7 @@ public class LoginService {
     }
 
     public ResponseEntity<LoginResponse>validateCredentials(String user , String pass){
-        Optional<UserApp>userOptional = UserRepository.findUsername(user);{
+        Optional<UserApp>userOptional = UserRepository.findByUsername(user);{
             if(userOptional.isPresent()) {
                 UserApp savedUserApp = userOptional.get();
                 if(savedUserApp.getPassword(). equals(pass)) {

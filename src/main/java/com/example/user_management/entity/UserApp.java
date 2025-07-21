@@ -4,29 +4,37 @@ package com.example.user_management.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name =" User")
 public class UserApp {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private  long id;
-    private String Userid;
-    private String Name;
-    private String Lastname;
-    private String Email;
-    private String Username;
-    private String Password;
+    private String userId;
+    private String name;
+    private String lastname;
+    private String email;
+    private String username;
+    private String password;
 
     public UserApp() {
     }
 
-    public UserApp(long id, String userid, String name, String lastname, String email, String username, String password) {
+    public UserApp(long id, String userId, String name, String lastname, String email, String username, String password) {
         this.id = id;
-        Userid = userid;
-        Name = name;
-        Lastname = lastname;
-        Email = email;
-        Username = username;
-        Password = password;
+        this.userId = userId;
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.username = username;
+        this.password = password;
+    }
+
+    public UserApp(String userId, String name, String lastname, String email, String username, String password) {
+        this.userId = userId;
+        this.name = name;
+        this.lastname = lastname;
+        this.email = email;
+        this.username = username;
+        this.password = password;
     }
 
     public long getId() {
@@ -37,51 +45,51 @@ public class UserApp {
         this.id = id;
     }
 
-    public String getUserid() {
-        return Userid;
+    public String getUserId() {
+        return userId;
     }
 
-    public void setUserid(String userid) {
-        Userid = userid;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getLastname() {
-        return Lastname;
+        return lastname;
     }
 
     public void setLastname(String lastname) {
-        Lastname = lastname;
+        this.lastname = lastname;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
     public void setUsername(String username) {
-        Username = username;
+        this.username = username;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 }
